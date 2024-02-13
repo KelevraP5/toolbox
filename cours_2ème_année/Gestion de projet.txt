@@ -1,0 +1,37 @@
+plusieurs phases lors d'un projet :
+
+- lancement --> vient d'un client, une idée, résolution de problèmes, définition d'objectifs (avoir un objectif clair, un projet réalisable), savoir ce qu'on va livrer, faire des études de 		faisabilité, identifier les intervenants (le client, les personnes qui travaillent sur le projet), rentabilité.
+
+- planification --> faire un plan de projet (mettre toutes les étapes du projet (arborescence du site, design général du site, UML, workflow, budget (salaires des dévs, etc, objets de 		    travail, frais d'amortissements (répartir les coûts d'achat sur plusieurs années), et autres frais), anticipation des risques (accidents de travail, décès, maladies, 		    etc), gérer la défaillance du client, catastrophes naturelles. Faire une réunion de lancement (officialiser le lancement, pratique pour des raisons administratives)
+
+- mise en oeuvre --> faire des mises au point avec tout le monde, contrôler le travail effectué
+
+- clôture --> post-mortem (après avoir eu un incident, se laisser du temps pour être sûr que le côté logique prenne le dessus)
+
+PRA = Plan de Reprise d'Activité = si vol, dégradation, etc
+
+PCA = Plan de Continuité d'Activité
+
+
+test unitaire = prendre une fonction et la tester pour être sûr qu'elle va bien marcher avant de la commit et push
+chemin critique = décale les tâches suivantes en fonction de la fin de la tâche précédente
+
+OUTILS
+-SCRUM
+-Trello
+-Figma
+-Notion
+-AppFlow
+-AlternativeTo
+-Obsidian  ( plugin markmap, open as markmap sur vscode)
+-Joplin
+-Toggle
+-Mantis
+-Utrack
+-Gantt project
+-Talend
+-Gource
+-Jamstack
+-Cecil
+-PostGray
+-(etc..)

@@ -1,0 +1,62 @@
+framework php français, outil interne ouvert en opensource.
+framework = cadre de travail facilité.
+
+Avant la 3.4 symfony était utilisé pour de gros projets uniquement car on devait tout prendre d'un coup
+Depuis la version 4, elle marche en bundle
+
+JWT = token est un token renvoyé par une api par exemple quand des infos sont validés et est utilisé pour valider chaque actions d'un utilisateur. Le JWT contient un payload en format json.
+
+fichiers yaml et xml servent à la configuration. Les fichiers yaml sont très sensibles à l'indentation.
+
+le dossier migrations servent à sauvegarder les fichiers pour recréer notre BDD. Le dossier Entity = Models. Kernel = coeur de l'application
+
+dans la route, le paramètre name sert pour récupérer la route si besoin
+
+php bin/console debug:router
+
+Les entités marchent avec une doctrine et un ORM
+
+Doctrine = ensemble de bilbiothèques opensource en php, qui vont fournir des outils pour créer les BDD relationnels.
+ORM = va faire les relations entre les tables.
+
+--> dl doctrine = composer require symfony/orm-pack
+
+link bdd dans .env = DATABASE_URL="mysql://root:@127.0.0.1:3306/nomBDD?serverVersion=10.11.2-MariaDB&charset=utf8mb4"
+
+quand un ? est devant un type = peut être undefined
+quand un ! est devant un type = n'accepte pas de null / undefined
+
+php bin/console make:controller NomDuController -> créer un controller
+
+php bin/console doctrine:database:create -> créer directement une bdd
+php bin/console make:entity -> créer directement une table
+php bin/console doctrine:migrations:migrate -> migre les tables dans la bdd
+
+symfony new my_project_directory --webapp --> enlever le flag --versions permet de toujours avoir la dernière version disponible
+
+le SALT est le niveau de difficulté du hashage
+
+dans le fichier twig = 
+
+{{ form_start(form) }}
+{{ form_row(form.nomdelinput) }}
+{{ form_row(form.nomdelinput) }}
+{{ form_end(form, {'render_rest': false }) }}
+
+SubmitType dans le fichier de Form vient de Form
+pour le bouton submit = ->add('save', SubmitType::class, ['label' => 'Envoyer'])
+
+*Request est à déclarer dans les paramètres de la fonction (il vient de HttpFoundation)
+Dans notre controller, $form->handleRequest(Request* $request);
+
+$form = $this->createForm(ClassDuFormulaire::class, $varDuNewObjet);
+
+pour renseigner une donnée dans la BDD -> EntityManagerInterface $em
+
+déclare ton entité et set des infos, puis $var->persist($nomdevariable) (persisté = envoyer des données en BDD), puis un $var->flush()
+
+pour hasher un mdp inserer : UserPasswordHasherInterface qui vient de PasswordHasher
+
+Mettre une route au dessus d'un controleur est un préfixe aux routes plus bas
+
+redirection = return $this->redirectToRoute('nomdelaroute', [], Response::HTTP_SEE_OTHER);

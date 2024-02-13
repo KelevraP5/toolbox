@@ -1,0 +1,27 @@
+lexik_jwt_authentication:
+    secret_key: '%env(resolve:JWT_SECRET_KEY)%'
+    public_key: '%env(resolve:JWT_PUBLIC_KEY)%'
+    pass_phrase: '%env(JWT_PASSPHRASE)%'
+    token_ttl: 3600
+
+la ligne token_ttl sert à donner un temps de validité à notre token.
+
+Voir tout a la fin du .env :
+
+###> lexik/jwt-authentication-bundle ###
+JWT_SECRET_KEY=%kernel.project_dir%/config/jwt/private.pem
+JWT_PUBLIC_KEY=%kernel.project_dir%/config/jwt/public.pem
+JWT_PASSPHRASE=motdepasserentrédanslescleSSL
+###< lexik/jwt-authentication-bundle ###
+
+
+s'il y a un problème avec lexik :
+- aller dans php.ini
+
+- décommanter la ligne extension=sodium
+
+- aller dans le composer.json et voir la version de "lexik/jwt-authentication-bundle": "*" => si c'est le cas le remplacer par "v" + dernière version (pour l'instant v2.19.1) (trouvable ici: https://github.com/lexik/LexikJWTAuthenticationBundle)
+
+- supprimer le composer.lock
+
+- faire composer install dans notre dossier où on travaille

@@ -1,0 +1,5 @@
+résolution photoshop =
+72 pour des images, 300 pour de l'impression
+
+rvb -> colorer une image (résultat plus lumineux)
+cmjn => colorer une impression (résultat plus sombre)

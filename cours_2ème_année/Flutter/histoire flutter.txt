@@ -1,0 +1,94 @@
+créer par Google, créer car y avait pas beaucoup de technos pour du mobile où on peut coder une appli avec un langage et pour android et IOS.
+transpilation --> complilation d'une langage vers un langage de même niveau.
+Flutter avec sa version 3.0 ne se limite plus simplement au mobile, mais aussi au bureau, web, etc
+SDK = Kit de Développement Logiciel
+
+Flutter peut fonctionner avec Dart mais pas que il peut fonctionner avec d'autres langages mais le plus simple reste Dart
+
+Devient populaire vers 2020 avec sa version 2.0
+
+Plus de balises, tout marche en widget
+
+pour download aller sur ce site https://docs.flutter.dev/get-started/install/windows/mobile?tab=download
+et aussi dl android studio : https://developer.android.com/studio
+
+ne pas dezipper flutter dans les dossier programmes files et programmes x86
+
+mettre le chemin du dossier bin dans les variables d'environnements
+
+installer android studio et installer le plugin flutter et dart et restart l'IDE
+
+pour avoir le path SDK taper le chemin du dossier flutter
+
+Quand on créer un fichier éviter les majuscules et le mot test
+
+avoir des informations sur flutter = flutter doctor -v
+
+Pour créer une page il faut le mettre dans un widget Build où on lui passe un context
+
+le dossier lib contient nos pages
+
+le pubspec.yaml équivaut au package.json
+enregistrer nos images en dur dans le pubspec.yaml
+
+pour télécharger des packages de Dart : https://pub.dev/
+
+la commande super permet d'accéder à la classe parent ex: super.parent
+
+3 parties dans l'appli : appBar (tout en haut), body, bottomBar (tout en bas)
+
+infos du composant appBar : https://api.flutter.dev/flutter/material/AppBar-class.html
+
+quand on créer une page on doit renseigner si elle sont stateless ou stateful
+stateful = pour affiché des données variables
+stateless = pour affiché des données brutes
+
+si la page est en stateful on ne déclare plus le super
+
+l'élément final est une constante
+
+pour afficher une image, on doit faire Image.asset ou file ou memory ou network mais les plus utilisés sont assets et network
+asset va chercher une image dans le dossier asset de flutter
+network va chercher en ligne (a privilégier quand on a pas la main sur les images)
+
+3 modes d'affichages : 
+- column (les uns en dessous des autres mais autorise le côte à côte)
+- row (les uns à côté des autres)
+- stack (se mettent les uns en dessous des autres)
+
+on met ce mode d'affichage après la partie de l'appli
+ex : body: Column(),
+
+pour faire apparaitre des éléments dans celui-ci on met child ou children (si on veut mettre un élément ou plusieurs)
+ex : body: Column(
+        children: [
+          Text('Bonjour'),
+          Image.network('https://picsum.photos/200/300?'),
+        ],
+      ),
+
+
+Pour mettre une couleur on mets Colors.nomdelacouleur ou Color(0xHexaDecimalDeLaCouleur)
+
+l'attribut Container (= div)
+
+ex de décoration d'éléments :
+mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+
+          Container(
+            margin: EdgeInsets.only(left: 16, bottom: 32),
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.lightGreen,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(widget.title, style: TextStyle(color: Colors.purple, fontSize: 30, decoration: TextDecoration.underline)),
+          ),
+
+          Image.network('https://picsum.photos/200/300?'),
+        ],
+
+Il y a la balise Positioned qu'on peut mettre avec top, left, etc pour positionner des éléments
+
+GridView nous donne une manière de présenter nos cartes, à l'inverse de ListView on peut les mettres à l'horizontal

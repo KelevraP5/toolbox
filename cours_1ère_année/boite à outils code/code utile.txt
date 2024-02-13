@@ -1,0 +1,55 @@
+faire des menus déroulants :
+- créer une liste dans une puce qui est dans une liste
+- lui donner une classe
+
+commande CSS :
+
+nav ul li{
+    position: relative;
+}
+nav ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+nav .subnav{
+    display: none;
+}
+nav li:hover .subnav{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    top: 100%;
+    left: 10%;
+    padding: 0;
+    z-index: 10;
+}
+
+/*pour le style*/
+
+nav .subnav li{
+    border-bottom: 2px solid grey;
+    width: 100%;
+    padding: .5rem 0;
+    text-align: center;
+}
+nav .subnav a{
+    padding: .5rem;
+}
+nav .subnav li{
+    background: white;
+}
+
+
+
+bannière avec image qui scrolle
+
+background-attachment : fixed;
+
+
+mettre un background flou quand on passe dessus mais pas le contenu
+
+.background:hover :not(input){
+   backdrop-filter: blur(4px);
+    height: 100%;
+}

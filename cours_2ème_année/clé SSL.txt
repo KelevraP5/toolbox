@@ -1,0 +1,23 @@
+le lien pour télécharger le lien .exe : https://slproweb.com/products/Win32OpenSSL.html
+télécharger Win64 OpenSSL v3.0.11 Light en EXE 
+
+ensuite runner l'installer
+
+une fois fait il faut mettre le chemin de la ou se trouve le dossier du dossier bin d'openssl en tant que variable d'environnement dans Path dans le deuxième bloc
+
+créer le dossier jwt dans le dossier config
+
+aller dans notre dossier de travail dans le CMD :
+
+openssl genpkey -out config/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa_keygen_bits:4096
+
+rentrer un mot de passe
+
+openssl pkey -in config/jwt/private.pem -out config/jwt/public.pem -pubout
+
+remettre le mot de passe
+
+Dans .env :
+JWT_SECRET_KEY=%kernel.project_dir%/config/jwt/private.pem
+JWT_PUBLIC_KEY=%kernel.project_dir%/config/jwt/public.pem
+JWT_PASSPHRASE=motdepasseutilisédanslesclés

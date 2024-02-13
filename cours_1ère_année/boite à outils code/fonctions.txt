@@ -1,0 +1,266 @@
+function debug($tab){
+    echo '<pre style="background: black; color: lightgreen; font-size: 0.8rem; overflow-y: scroll">';
+    print_r($tab);
+    echo '</pre>';
+}
+
+function cleanXSS($key){
+    return trim(strip_tags($_POST[$key]));
+}
+
+function validatetxt($taberror, $data, $keyerror, int $min, int $max){
+    if (!empty($data)){
+        if (mb_strlen($data) < $min){
+            $taberror[$keyerror] = 'Veuillez renseigner plus de '.$min.' caractères.';
+        } elseif (mb_strlen($data) > $max){
+            $taberror[$keyerror] = 'Veuillez renseigner moins de '.$max.' caractères.';
+        }
+    } else {
+        $taberror[$keyerror] = 'Veuillez renseigner ce champ.';
+    }
+    return $taberror;
+}
+
+
+function validatenum(array $taberreur, $data, $keyerror, int $min, int $max){
+    if (!empty($data)){
+        if (ctype_digit($data)){
+            if ($data < $min || $data > $max){
+                $taberreur[$keyerror] = 'Merci de mettre une valeur entre '. $min.' et '. $max.'.';
+            }
+        } else{
+            $taberreur[$keyerror] = 'Message erreur nombre entier';
+        }
+    } else{
+        $taberreur[$keyerror] = 'Message erreur nombre';
+    }
+    return $taberreur;
+}
+
+
+function validatemail($taberreur, $data, $keyerror){
+    if (!empty($data)) {
+        if (filter_var($data, FILTER_VALIDATE_EMAIL)){
+            $taberreur[$keyerror] = null;
+        } else {
+            $taberreur[$keyerror] = 'Veuillez renseigner une adresse mail valide';
+        }
+    } else {
+        $taberreur[$keyerror] = 'Veuillez renseigner une adresse mail';
+    }
+    return $taberreur;
+}
+
+
+function validatePostalCode(array $taberreur, $data, $keyerror, int $num){
+    if (!empty($data)){
+        if (ctype_digit($data)){
+            if(mb_strlen($data) != 5) {
+                $taberreur[$keyerror] = 'Merci de mettre une valeur valide.';
+            }
+        } else {
+            $taberreur[$keyerror] = 'Merci de mettre un nombre entier.';
+        }
+    } else{
+        $taberreur[$keyerror] = 'Merci de remplir ce champ';
+    }
+    return $taberreur;
+}
+
+function orderUp($tab, $contain){
+    $swap = true;
+    while ($swap){
+        $swap = false;
+        for ($i = 0; $i < count($tab)-1; $i+=1){
+            if ($tab[$i] > $tab[$i+1]){
+                $contain = $tab[$i];
+                $tab[$i] = $tab[$i+1];
+                $tab[$i+1] = $contain;
+                $swap = true;
+            }
+        }
+    }
+    return $tab;
+}
+si on veut les afficher sous forme de string mettre ca dans le php : 
+$resultUp = implode(' ',orderUp($tabnum, $contain));
+    echo $resultUp;
+
+function orderDown($tab, $contain){
+    $swap = true;
+    while ($swap){
+        $swap = false;
+        for ($i = 0; $i < count($tab)-1; $i+=1){
+            if ($tab[$i] < $tab[$i+1]){
+                $contain = $tab[$i];
+                $tab[$i] = $tab[$i+1];
+                $tab[$i+1] = $contain;
+                $swap = true;
+            }
+        }
+    }
+    return $tab;
+}
+
+si on veut les afficher sous forme de string mettre ca dans le php : 
+$resultDown = implode(' ',orderDown($tabnum, $contain));
+    echo $resultDown;
+
+////////////////////////////////////////////////////
+///fonctions JAVASCRIPT
+///////////////////////////////////////////////////
+
+function validationForm (id,min,max){
+    const input = document.querySelector('#'+ id);
+    const error = document.querySelector('#error_'+ id);
+    input.addEventListener('keyup', function (){
+        let length = input.value.length;
+        let text = '';
+        let classError = 'error';
+
+        if (input.value != ''){
+            if (length < min){
+                text = `Veuillez renseigner plus de ${min} caractères`;
+            } else if (length > max){
+                text = `Veuillez renseigner plus de ${max} caractères`;
+            } else {
+                text = 'Bravo vous avez écrit ' + length + ' caractères'
+                classError = 'success'
+            }
+        } else {
+            text = 'Veuillez renseigner ce champ';
+        }
+        error.innerHTML = text;
+        error.className = classError;
+
+    });
+}
+
+
+Changer la couleur d'un champ select
+
+const select = document.querySelector('id_du_select');
+fruits.addEventListener('change', function (event){
+    let variable = select.value;
+    let variableValue = select.options[select.selectedIndex].dataset.color;
+    event.target.style.background = variableValue;
+    event.target.style.color = 'black';
+})
+
+Importer un fichier html dans un autre :
+
+function getHtmlFile(importedFile){
+    fetch(importedFile)
+        .then(Response => Response.text())
+        .then(html => {
+            ck.innerHTML = html;
+        })
+        .catch(error => console.error('erreur de chargement de la page ' + importedFile));
+}
+
+////////////////////////////////////////////////////
+///fonctions AJAX
+///////////////////////////////////////////////////
+
+function showJson($data){
+        header("Content-type: application/JSON");
+        $json = json_encode($data, JSON_PRETTY_PRINT);
+        if ($json){
+            die($json);
+        } else {
+            die('Erreur in JSON encoding');
+        }
+}
+
+
+////////////////////////////////////////////////////
+/// fonctions programmation orientée objet
+///////////////////////////////////////////////////
+
+function bitstoBytes ($bits){
+    $byte = 0;
+    $correspondance = [128, 64, 32, 16, 8, 4, 2, 1];
+
+    for ($i = 0; $i < count($correspondance); $i++){
+        if ($bits[$i] === "1"){
+            $byte = $byte + $correspondance[$i];
+        }
+    }
+return $byte;
+
+}
+
+
+function bytestoBits ($byte){
+    $bits = "";
+    $correspondance = [128, 64, 32, 16, 8, 4, 2, 1];
+
+    for ($i = 0; $i < count($correspondance); $i++){
+        if ($correspondance[$i] <= $byte){
+            $bits .= "1";
+            $byte = $byte - $correspondance[$i];
+        } else {
+            $bits .= "0";
+        }
+    }
+    return $bits;
+}
+
+
+////////////////////////////////////////////////////
+/// fonctions wordpress
+///////////////////////////////////////////////////
+
+function debug($var,$height = 200,$fixed = false)
+{
+    $backt = debug_backtrace()[0];
+    if($fixed) {
+        echo '<pre style="position: fixed;top:0;left:0;right:0;height:'.$height.'px;z-index:999999;overflow-y: scroll;font-size:.8em;padding: 10px 10px 10px 220px; font-family: Consolas, Monospace; background-color: #000; color: #fff;">';
+    } else {
+        echo '<pre style="height:'.$height.'px;z-index:999999;overflow-y: scroll;font-size:.8em;padding: 10px 10px 10px 10px; font-family: Consolas, Monospace; background-color: #000; color: #fff;">';
+    }
+    echo '<p style="font-size:.85rem;">'.$backt['file'].' - '.$backt['line'].'</p>';
+    print_r($var);
+    echo '</pre>';
+}
+
+
+function path($slug) {
+    return esc_url( home_url( $slug ));
+}
+
+
+function asset($file) {
+    return get_template_directory_uri() . '/asset/' . $file;
+}
+
+
+function thumbnail_display($posts_query){
+            if ( $posts_query->have_posts() ) {
+                while ( $posts_query->have_posts() ) {
+                    $posts_query->the_post();
+                    $img_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                }
+            }
+            wp_reset_postdata();
+}
+
+function display_text($meta, $key){
+    if (!empty($meta[$key])){
+        return $meta[$key][0];
+    }
+    return '';
+}
+
+function display_img($meta, $key, $size){
+    if (!empty($meta[$key])){
+        $img = wp_get_attachment_image_src($meta[$key][0], $size);
+        return '<img src="'.$img[0].'" alt="">';
+    }
+    return '';
+}
+
+function getImgId($id, $size) {
+    $img = wp_get_attachment_image_src($id, $size);?>
+    <img src="<?php echo $img[0] ?>" alt="">
+<?php } ?>

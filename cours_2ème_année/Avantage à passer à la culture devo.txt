@@ -1,0 +1,4 @@
+Avantage à passer à la culture devops
+
+- meilleure entente entre les équipes aussi bien amicalement que professionnellement --> permet de régler les problèmes plus vite car meilleure communications des besoins et des attentes => réduction du Time To Market
+- meilleur service client --> au plus près des attentes du client, évites les malentendu et ainsi une mauvaise réputation et peut potentiellement le transformer en ambassadeur => aide à la croissance de la boite

@@ -1,0 +1,46 @@
+///////////////////////////////////////////////////////
+/// commande html
+//////////////////////////////////////////////////////
+
+<link rel="stylesheet" href="flexslider.css" type="text/css">
+(à mettre avant notre css)
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="jquery.flexslider.js"></script>
+(avant notre script js)
+
+/////////////////////////////////////////////////////
+// contenu des slides
+////////////////////////////////////////////////////
+
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="slide1.jpg" />
+    </li>
+    <li>
+      <img src="slide2.jpg" />
+    </li>
+    <li>
+      <img src="slide3.jpg" />
+    </li>
+  </ul>
+</div>
+
+////////////////////////////////////////////////////////
+/// commande javascript
+////////////////////////////////////////////////////////
+
+ $(document).ready(function() {
+    $('.nom de la div avec les slides').flexslider({
+	données d'animations
+});
+  });
+
+///////////////////////////////////////////////////////
+/// tips
+//////////////////////////////////////////////////////
+
+si on veut mettre du texte dans un slider, penser à mettre les li en position relative
+
+prendre tout les fichiers -min, flexslider.css, css, fonts, images (si besoin)

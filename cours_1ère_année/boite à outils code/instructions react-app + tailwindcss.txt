@@ -1,0 +1,12 @@
+Pour le CRA = npm init react-app nomdudossierdel'appli
+
+tailwindcss = 
+
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init -p
+- mettre chemin des fichiers qui vont être écoutés
+- connecter le css style aux composants
+- (le mettre dans le package.json) npx tailwindcss -i ./dossiercsstailwind -o ./dossiercssstyle --watch
+
+Créer app next.js =
+npx create-next-app@latest my-project --typescript (pour activer typescript)

@@ -1,0 +1,45 @@
+symfony new my_project_directory --webapp --> enlever le flag --versions permet de toujours avoir la dernière version disponible
+
+composer fund -> permet de voir tous les imports de composer
+
+symfony server:start
+symfony server:stop
+
+composer require symfony/annotations-pack --> gérer nos routes en annotations (pré-installé si on utilise webapp) si on utilise php 7
+composer require doctrine/annotations --> gérer nos routes en annotations (pré-installé si on utilise webapp) si on utilise php 8
+
+composer require symfony/twig-bundle --> installer twig
+
+php bin/console debug:router --> voir tous nos controller
+
+composer require jms/serializer-bundle
+composer require friendsofsymfony/rest-bundle
+composer require --dev symfony/maker-bundle --> faire des controllers, etc en ligne de commandes
+composer require symfony/orm-pack --with-all-dependencies --> pouvoir créer des entités et bdd (mettre le flag pour version de php > php 7)
+composer require lexik/jwt-authentication-bundle -> importer jwt pour pouvoir sécuriser une API
+
+php bin/console make:controller NomDuController -> créer un controller
+
+php bin/console doctrine:database:create -> créer directement une bdd
+php bin/console make:entity -> créer directement une table
+
+php bin/console make:migration -> créer les données pour la migrations
+php bin/console doctrine:migrations:migrate -> migre les tables dans la bdd
+
+si problème run cette commande : php bin/console doctrine:migrations:sync-metadata-storage
+
+php bin/console make:form
+composer require form validator
+
+php bin/console make:auth -> faire un controller d'authentification
+
+php bin/console make:crud
+
+php bin/console make:register
+
+composer require symfony/security-bundle 
+php bin/console make:user -> fait l'entité user car crée par le security-bundle
+
+composer require api -> installer les composants pour gérer une api
+
+composer remove commandeDuComposant -> retirer un composant du composer.json

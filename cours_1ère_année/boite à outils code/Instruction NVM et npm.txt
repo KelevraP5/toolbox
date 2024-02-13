@@ -1,0 +1,24 @@
+ReadMe de NVM : https://github.com/nvm-sh/nvm/blob/master/README.md
+
+Instructions d'utilisation : https://github.com/coreybutler/nvm-windows
+
+Manuel d'installation : https://github.com/coreybutler/nvm-windows/wiki#manual-installation
+
+Lien de téléchargement : https://github.com/coreybutler/nvm-windows/releases
+
+
+1- Télécharger le nvm-setup.zip
+(1-bis Désinstaller NodeJS)
+2- Installer NVM
+3- Ouvrir le CMD et mettre les instructions suivantes :
+
+nvm install version node js OU nvm install node--> pour la dernière version mettre nvm install latest
+nvm use version node js
+node -v --> connaitre la version utilisée de NodeJS
+
+pour update npm -> npm install -g npm@latest
+
+quand on installe nvm, cela installe automatiquement npm et npx
+
+NPM = installe les dépendances globalement sur l'ordi
+NPX = installe les dépendances seulement pour le projet

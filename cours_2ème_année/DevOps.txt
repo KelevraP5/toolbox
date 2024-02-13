@@ -1,0 +1,61 @@
+Développement dans une Machine Virtuelle dans le cloud
+DevOps -> permet d'améliorer les environnements de travails des dév et accélérer le Time To Market
+
+Time To Market (TTM) = temps pour pouvoir accéder aux marchés
+
+Pas d'évolutions sans échecs
+
+Avant DevOps
+- le dév réalise un système ou une appli
+- le système admin (OPS) gère le serveur et le réseau. C'est lui que les dévs appellent quand ils ont un problème technique (problème avec une machine virtuelle, une nouvelle machine)
+
+Les dévs veulent du changements alors que les OPS veulent de la stabilité
+
+Confusions entre les différentes parties du projet (clients, marketing, chef de projet, dévs, etc)
+
+Après DevOps
+Déploiement simultané sur différentes plateformes
+Meilleure collaboration
+Meilleur exp client
+
+DevOps = mouvement en ingégnierie informatique et une pratique technique visant à l'unification de développement du logiciel jusqu'au déploiement
+
+Partie dev = 
+- performances des applications
+- statistiques des utilisateurs finaux
+- qualité du code
+- 
+
+Partie ops =
+-
+-
+-
+-
+
+CI = Continuous Integration
+CD = Continuous Deployment = app doit être construite pour être envoyé automatiquement en prod
+
+Microservices
+- Architecture monolithique = tout le code en 1 page
+- Architecture microservice = chaque éléments à sa page de code -> utile pour pouvoir corriger un bug
+
+Hyperviseur = une tour qui contient des machines virtuelles. Problème tu ne paie pas forcément pour tes besoins
+
+Conteneurs = contient un machine virtuelles et peut contenir plusieurs applications. Elle est plus rapide et les app sont transferable à un autre conteneur si besoin
+On décentralise une app sur plusieurs serveurs
+
+
+Kubernetes (K8s) = système open-source qui fournit une plateforme qui permet d'automatiser le déploiement, la montée en charge, la mise en oeuvre de conteneurs d'appli
+
+Docker = plateforme qui permet de lancer des images (applis) dans des conteneurs logiciels qui peuvent être lancé de n'importe où.
+Docker Hub -> permet d'aller chercher des images prédéfinis
+
+Il y a 3 niveaux de conteneurs 
+- Master
+- Worker
+- Conteneur
+
+Docker manage les conteneurs
+K8s manage les workers
+
+

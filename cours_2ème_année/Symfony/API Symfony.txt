@@ -1,0 +1,13 @@
+composer require jms/serializer-bundle
+composer require friendsofsymfony/rest-bundle
+composer require --dev symfony/maker-bundle --> faire des controllers, etc en ligne de commandes
+composer require symfony/orm-pack --with-all-dependencies --> pouvoir créer des entités et bdd (mettre le flag pour version de php > php 7)
+composer require lexik/jwt-authentication-bundle -> importer jwt pour pouvoir sécuriser une API
+
+Faire ces commandes dans l'ordre (penser à dire yes pour executer les dépendances de friendsofsymfony et serializer --> va respetivement faire le fichier fost-rest.yaml et le mettre dans bundles.php).
+On va juste utiliser les format_listener
+
+Aller dans le .env faire les modif pour créer la base de données
+
+Décommanter les format_listener dans fos_rest.yaml
+si problème rajouter cette ligne à la fin : - { path: '^/', priorities: [ 'html', '*/*'], fallback_format: ~, prefer_extension: true }

@@ -1,0 +1,25 @@
+flutter doctor -v --> avoir des infos sur flutter
+
+flutter create nom_du_fichier --> créer ton fichier
+
+flutter pub add http --> install le package http pour faire des appels api
+
+//////// Appels API /////////
+rajouter cette ligne dans AndroidManifest.xml avant la fermeture du manifest (dans le dossier android/app/main) : <uses-permissions android:name="android.permission.INTERNET" />
+
+Cela permet de dire au tel d'utiliser internet
+
+Dans le fichier du code :
+Ne pas oublier d'importer le http : import 'package:http/http.dart' as http;
+
+Future<http.Response> fetchPost() {
+    return http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+  }
+
+  // mettre cette fonction pour faire en sorte que tout ce qu'il y a à l'intérieur se charge et s'affiche tout en début
+  @override
+  void initState() {
+    super.initState();
+    fetchPost();
+    print(fetchPost());
+  }

@@ -1,0 +1,43 @@
+si jamais on oublie webapp dans la génération du projet, importer la posibilité de créer des controller, entités, etc en ligne de commande --> composer require --dev symfony/maker:bundle
+
+composer require symfony/annotations-pack --> pouvoir gérer tes routes en annotations
+
+les name dans les routes sont très importantes quand on va gérer des formulaires
+
+on va créer un dossier template, un dossier main, index.html.twig (on utilise twig car plus de possibilité avec twig).
+
+mettre le chemin complet du dossier du render (le render va directement dans un dossier template)
+
+le Response qu'on veut vient de HttpFoundation
+
+Créer les entités, modifié le .env en commentant la ligne avec MariaDB et décommenter la ligne d'avant avec MySQL : DATABASE_URL="mysql://root:@127.0.0.1:3306/nomBDD?serverVersion=8.0.32&charset=utf8mb4"
+
+faire la migration
+
+pour renseigner une donnée dans la BDD -> EntityManagerInterface $var
+
+déclare ton entité et set des infos, puis $var->persist($nomdevariable) (persisté = envoyer des données en BDD), puis un $var->flush()
+
+créer un formulaire en ligne de commande
+
+$form = $this->createForm(ClassDuFormulaire::class, $varDuNewObjet);
+
+passé le formulaire dans le render
+
+dans le fichier twig = 
+
+{{ form_start(form) }}
+{{ form_row(form.nomdelinput) }}
+{{ form_row(form.nomdelinput) }}
+{{ form_end(form, {'render_rest': false }) }}
+
+SubmitType dans le fichier de Form vient de Form
+pour le bouton submit = ->add('save', SubmitType::class, ['label' => 'Envoyer'])
+
+*Request est à déclarer dans les paramètres de la fonction (il vient de HttpFoundation)
+Dans notre controller, $form->handleRequest(Request* $request);
+
+if($form->isSubmitted() && $form->isValid()){
+	$em->persist($nomdevariable);
+	$em->flush();
+}

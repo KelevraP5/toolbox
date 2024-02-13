@@ -1,0 +1,90 @@
+Inventé par Google en 2010 sous le nom d'Angular JS, ca a éte une petite révolution car il n'y avait pas les autres frameworks JS (react, vue, etc).
+
+2016 : création d'Angular 2, rajoute beaucoup d'éléments et de fluidité ainsi que son propre système de balisage.
+
+Angular est une Progressive Web App --> peut être une appli mobile, site web, appli ordinateur (il n'y a que flutter qui peut être sur le store android et apple)
+
+Angular est mieux adapté pour les gros projets
+
+Raison pourquoi Angular a été crée -> besoin de structure, de convention. Besoin de données bi-directionnel (envoi de données du modèle à la vue), réutilisation du code, rapidité du chargement des pages, support de Google.
+
+connaitre la version d'angular = ng v.
+
+On ne touche pas a angular.json, index.html, style.scss, main.ts
+Tout supprimer dans app/app.component.html sauf la dernière ligne : <router-outlet></router-outlet>
+
+Pour ajouter une route, aller dans app-routing.module.ts, dans le tableau Routes mettre un objet avec les données suivante :
+path: 'chemin',
+component: Nomducomposant,
+
+Les hooks utiles : ngOnInit, ngAfterContentInit, ngAfterViewInit, ngOnDestroy
+
+ngOnInit -> faire de la récupération de données avant que la vue soit chargé
+ngAfterContentInit -> faire de la récupération de données avant que le html soit chargé
+ngAfterViewInit -> récupération de données avant que la vue et le css soit chargé
+ngOnDestroy -> faire une action après avoir quitté la page, utile pour éviter de surcharger l'appareil
+
+Pour que ca marche on doit taper toutes les commandes js dans le fichier ts du component
+
+ex : import {AfterViewInit, Component} from '@angular/core';
+
+@Component({
+  selector: 'app-films',
+  templateUrl: './films.component.html',
+  styleUrls: ['./films.component.scss']
+})
+export class FilmsComponent implements AfterViewInit{
+  ngAfterViewInit() {
+    console.log("La vue est chargée");
+  }
+}
+
+
+directive structurelle = condition if else, for, etc. Elle commence toujours par *ng.
+directive d'attribut = mettre entre crochet ([]) la class d'une balise et on peut utiliser cette classe dans notre ts. Quand on fait ca, on doit déclarer la variable dans le ts, dans la class du component : public data : string = ""; ou data = ""; pour dire ou, on met |.
+
+pour les tableaux :   data : Array<any> = ["titi", "grosminet"]; -> pour les tableaux, on doit obligatoirement mettre une valeur et typer
+
+pour mettre un évènement js -> (evenementJS)="fonction"
+
+modifier dynamiquement un élément : 
+log(event:any){
+    console.log("je suis là", event);
+    event.target.outerHTML = "<p>RUN !</p>"
+  }
+
+
+FORMULAIRE : 
+
+Pour pouvoir traiter un formulaire on a besoin de mettre dans le fichier app.module.ts -> import {ReactiveFormsModule} from "@angular/forms"; et ReactiveFormsModule,
+
+Créer le formulaire dans le fichier .ts = 
+variable = new FormGroup(
+    {
+      clé: new FormControl('valeur', [Validators.required, Validators.minLength(8)]),
+      clé: new FormControl('valeur', [Validators.required, Validators.email]),
+    }
+  )
+
+Dans le fichier .html =
+
+<form [formGroup]="formulaire" (ngSubmit)="OnSubmit()">
+
+<input type="type" name="nom" id="nom" formControlName="clé">
+
+<div *ngIf="formulaire.controls.name.invalid && (formulaire.controls.name.dirty || formulaire.controls.name.touched)">
+    <div *ngIf="formulaire.controls.name.errors?.['required']">Un nom est requis</div>
+    <div *ngIf="formulaire.controls.name.errors?.['minlength']">Il faut 8 caractères</div>
+</div>
+
+  <button type="submit">Submit</button>
+
+
+
+API :
+
+créer un service = ng new service Nomduservice (sans service car mis automatiquement)
+
+dans le fichier service.ts -> constructor(private http : HttpClient)
+
+rajouter dans app.module.ts -> import {HttpClientModule} from "@angular/common/http"; et HttpClientModule, dans imports

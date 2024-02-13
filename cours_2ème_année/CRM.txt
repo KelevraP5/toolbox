@@ -1,0 +1,45 @@
+Customer Relationship Management --> Logiciel de Gestion de Relation Client
+
+BDD d'un client et tout les services ont accès à ce CRM --> permet d'offrir un meilleur service, optimiser les ventes, personnaliser les services et comprendre leurs besoins
+
+Cet objectif deviennent plus complexes car ils contactent les entreprises via différents canaux : messagerie, email, téléphone, RS, etc
+
+Différents types de CRM :
+
+- Collaboratifs (ou social ou 2.0) => faciliter la communication et la collaboration entre les services afin d'améliorer le service client.
+
+- Opérationnels => automatiser les ventes et le service clients, gérer les leads, gestion des contacts et des données clients afin que les équipes puissent se concentrer sur des tâches qui requiert une intervention humaine.
+
+- Analytiques => analyser les données clients, segmenter les clients en fonction de critères, prévoir les comportements futurs des clients
+
+taux d'attrition = évalue la perte de client
+taux d'attribution = évalue le gain de client
+
+
+Principale fonctionnalités d'un CRM :
+
+- Gestion des contacts : stockage des infos de contacts des clients ou leads
+- Gestion des leads : suivi de son parcours pour pouvoir le transformer à terme en clients (puis ambassadeur si possible)
+- Gestion des clients : suivi des infos (plainte, SAV, abonnement) et de son historique d'achats
+- Automatisation des ventes : gérer les étapes de ventes, réalisation de contrats, de devis
+- Gestion des activités : planification, suivi et gestion des activités liées au clients (appels, rdv, etc)
+- Automatisation du marketing : création, gestion et automatisation des campagnes marketing (emails, suivi de réponses, segmentation de clientèle)
+- Service client : gestion du SAV pour garantir un bon service client
+- Reporting et analyses : création de rapports personnalisés, tableaux de bords et analyse pour évaluer les performances de ventes
+- Intégrations : centralisation des outils pour les différents pôles de l'entreprise
+- Sécurisation des données : fonctionnalités de sécurité pour protéger les données
+- Mobilité : app mobile pour que les commerciaux puissent accéder aux données avant une visite
+- CRM social : intégration des médias sociaux afin de surveiller les conversations, etc, concernant l'entreprise
+
+
+PIPELINE DE VENTES :
+
+- Suspect => n'a pas encore échangé avec l'entreprise
+- Lead => a échangé avec l'entreprise
+- Prospect => est potentiellement intéressé à réaliser un achat
+- Acheteur => a réalisé un achat
+- Client => a déjà fait un achat et est intéresser pour refaire un achat
+- Ambassadeur => parle de l'entreprise autour de lui
+
+
+Exemple CRM gratuit : Hubspot, Bitrix 24
