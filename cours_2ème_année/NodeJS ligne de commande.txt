@@ -1,0 +1,27 @@
+npm init
+npm install express
+npm install body-parser
+npm install cors
+npm install mysql2
+npm install mongoose
+npm install dotenv
+npm install apitoolkit-express
+npm install swagger-ui-express swagger-jsdoc
+npm install api-toolkit
+npm install multer
+npm install jsonwebtoken
+npm install bcrypt
+npm install crypto
+npm install express-rate-limit
+npm install express-validation
+
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))" (récupérer la clé secrete)
+
+node server start
+
+
+npm install multer (pour les uploads d'images)
+npm install crypto (générer la clé secrete JWT)
+npm install cors (permet de lier le back et le front ensemble)
+
+si problème avec bcrypt : désinstalle bcrypt, npm install node-pre-gyp -g puis npm rebuild bcrypt --build-from-source puis installer bcrypt

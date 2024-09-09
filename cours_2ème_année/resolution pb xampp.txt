@@ -1,0 +1,9 @@
+désactiver xampp
+
+aller dans le dossier MySQL de xampp
+aller dans le dossier data
+copier son contenu autre part sur l'ordinateur
+vider entièrement le contenu de data
+recopier les dossiers contenant les BDD dans data
+recopier le fichier ibdata1
+relancer xampp

@@ -1,0 +1,51 @@
+NUXT JS
+
+REACT, VUE, ANGULAR trois grand framework JS.
+
+la base du language = VUE.
+
+routing auto.
+il faut juste une bonne archi de dossier.
+
+nuxt est adaptable pour les petit, moyen et gros projet. mais angular et mieux pour les gros projet.
+
+adaptable et leger = VUE
+
+l'histoire de VUE (jeunesse de Nuxt)
+de base le gars trouver angular trop complexe du coup il a fait un truc plus leger et rapide.
+donc il a fait son propre language (vue). 
+c'est opensource.
+2014 = premiere version pas ouf.
+dans la meme année mise a jour attractive.
+puis pleins d'autre mise a jour avec pleins de composants, des plugins, des middlewares.
+
+NUXT
+opensource basé sur le language VUE (en 2017)
+routing auto basé sur la nomanclature et l'architecture des fichiers.
+si on commence le nom du fichier par :  cela devient un parametre.
+serveur side randoring (SSR) = genere html coté serveur avant d'envoyer coté client, donc meilleur performance, meilleur referencement, meilleur experience utilisateur.
+possible de desactivé le ssr pour avoir des données assyncrone.
+version 3 de nuxt = type script.
+
+
+
+INSTALLATION:
+npm install -g create-nuxt-app     (pour avoir juste quelque composant sinon faire = npm i nuxt)
+
+CREER UN PROJET:
+npx create-nuxt-app exercice2bci   
+(pour configurer l'app, espace pour selectionner les choix multiples puis entrer pour valider)
+✨  Generating Nuxt.js project in exercice2bci
+? Project name: exercice2bci
+? Programming language: TypeScript
+? Package manager: Npm
+? UI framework: Bootstrap Vue
+? Template engine: HTML
+? Nuxt.js modules: Axios - Promise based HTTP client, Progressive Web App (PWA)
+? Linting tools: ESLint, Prettier
+? Testing framework: Jest
+? Rendering mode: Universal (SSR / SSG)
+? Deployment target: Server (Node.js hosting)
+? Development tools: jsconfig.json (Recommended for VS Code if you're not using typescript)
+? Continuous integration: None
+? Version control system: Git
